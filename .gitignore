@@ -1,0 +1,7 @@
+
+.vscode
+.idea
+.lcpr_data
+*.md
+*.json
+build
