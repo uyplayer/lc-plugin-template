@@ -1,8 +1,8 @@
 /*
- * @lc app=leetcode.cn id=144 lang=cpp
+ * @lc app=leetcode.cn id=145 lang=cpp
  * @lcpr version=30202
  *
- * [144] 二叉树的前序遍历
+ * [145] 二叉树的后序遍历
  */
 
 #include <iostream>
@@ -25,46 +25,31 @@ using namespace std;
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-class Solution
-{
+class Solution {
 public:
-    vector<int> preorderTraversal(TreeNode *root)
-    {
+    vector<int> postorderTraversal(TreeNode* root) {
+
         vector<int> result;
-        if (root == nullptr)
-        {
+        if (root == nullptr){
             return result;
         }
-        result.push_back(root->val);
-        auto left = preorderTraversal(root->left);
-        auto right = preorderTraversal(root->right);
+
+        auto left = postorderTraversal(  root->left);
+        auto right = postorderTraversal(root->right);
         result.insert(result.end(), left.begin(), left.end());
-        result.insert(result.end(), right.begin(), right.end());
-        return result;
-    }
-    vector<int> result;
-     vector<int> preorderTraversa2(TreeNode *root){
-        traverse(root);
-        return result;
-     }
-    void traverse(TreeNode *root)
-    {
-        if (root == nullptr)
-        {
-            return;
-        }
+        result.insert(result.end(), right.begin(), right.end()); 
         result.push_back(root->val);
-        traverse(root->left);
-        traverse(root->right);
+        return result;
     }
 };
 // @lc code=end
 
-int main()
-{
+int main() {
     Solution solution;
     // your test code here
 }
+
+
 
 /*
 // @lcpr case=start
@@ -84,3 +69,4 @@ int main()
 // @lcpr case=end
 
  */
+
