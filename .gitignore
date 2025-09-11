@@ -2,7 +2,7 @@
  
  
 .idea
-.lcpr_data
+# .lcpr_data
 *.md
 !README.md
 *.json
