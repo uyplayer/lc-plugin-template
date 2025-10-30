@@ -1,9 +1,20 @@
-cmake_minimum_required(VERSION 3.15)
-project(cpp-src LANGUAGES CXX)
+cmake_minimum_required(VERSION 3.10)
+
+project(CPPSRC VERSION 0.0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(BUILD_ROOT ${CMAKE_SOURCE_DIR}/build)
+set(BUILD_BIN_DIR ${BUILD_ROOT}/bin)
+set(BUILD_LIB_DIR ${BUILD_ROOT}/lib)
 
+file(MAKE_DIRECTORY ${BUILD_BIN_DIR} ${BUILD_LIB_DIR})
 
-add_subdirectory(sort_src)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${BUILD_BIN_DIR})
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${BUILD_LIB_DIR})
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${BUILD_LIB_DIR})
+
+add_executable(${PROJECT_NAME}
+    src/main.cpp
+)
