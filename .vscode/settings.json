@@ -1,35 +1,64 @@
 {
-  "labuladong-leetcode.defaultLanguage": "cpp",
-  "labuladong-leetcode.filePath": {
-    "python": {
-        "folder": "leetcode/editor/${endpointType}",
-        "filename": "${kebab-case-name}.${ext}"
+    "labuladong-leetcode.defaultLanguage": "cpp",
+    "labuladong-leetcode.filePath": {
+        "python": {
+            "folder": "leetcode/editor/${endpointType}",
+            "filename": "${kebab-case-name}.${ext}"
+        },
+        "python3": {
+            "folder": "leetcode/editor/${endpointType}",
+            "filename": "${kebab-case-name}.${ext}"
+        },
+        "javascript": {
+            "folder": "leetcode/editor/${endpointType}",
+            "filename": "${kebab-case-name}.${ext}"
+        },
+        "cpp": {
+            "folder": "leetcode/editor/${endpointType}",
+            "filename": "${kebab-case-name}.${ext}"
+        },
+        "golang": {
+            "folder": "leetcode/editor/${endpointType}",
+            "filename": "${snake_case_name}_test.${ext}"
+        },
+        "java": {
+            "folder": "src/main/java/leetcode/editor/${endpointType}",
+            "filename": "${PascalCaseName}.${ext}"
+        },
+        "default": {
+            "folder": "",
+            "filename": "${id}.${kebab-case-name}.${ext}"
+        }
     },
-    "python3": {
-        "folder": "leetcode/editor/${endpointType}",
-        "filename": "${kebab-case-name}.${ext}"
+    "labuladong-leetcode.workspaceFolder": "/home/uyplayer/projects/lc-plugin-template/cpp-template",
+    "cmake.sourceDirectory": "/Users/uyplayer/projects/lc-plugin-template/cpp-template",
+    // 文件类型关联
+    "files.associations": {
+        "*.py": "python",
+        "*.cpp": "cpp",
+        "*.tpp": "cpp",
+        "*.h": "cpp",
+        "stdexcept": "cpp",
+        "type_traits": "cpp"
     },
-    "javascript": {
-        "folder": "leetcode/editor/${endpointType}",
-        "filename": "${kebab-case-name}.${ext}"
+    // 编辑器设置
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": true
     },
-    "cpp": {
-        "folder": "leetcode/editor/${endpointType}",
-        "filename": "${kebab-case-name}.${ext}"
-    },
-    "golang": {
-        "folder": "leetcode/editor/${endpointType}",
-        "filename": "${snake_case_name}_test.${ext}"
-    },
-    "java": {
-        "folder": "src/main/java/leetcode/editor/${endpointType}",   
-        "filename": "${PascalCaseName}.${ext}"
-    },
-    "default": {
-        "folder": "",
-        "filename": "${id}.${kebab-case-name}.${ext}"
-    }
-},
-"labuladong-leetcode.workspaceFolder": "/home/uyplayer/projects/lc-plugin-template/cpp-template",
-"cmake.sourceDirectory": "/Users/uyplayer/projects/lc-plugin-template/cpp-template"
+    "editor.suggestOnTriggerCharacters": true,
+    "editor.parameterHints.enabled": true,
+    "editor.tabCompletion": "on",
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.formatOnSave": true,
+    "editor.wordWrap": "on",
+    "editor.fontFamily": "Consolas, 'Courier New', monospace",
+    "editor.ligatures": true,
+    "editor.fontSize": 17,
+    // 终端设置
+    "terminal.integrated.fontFamily": "Consolas, 'Courier New', monospace",
+    "terminal.integrated.fontSize": 17,
+    // Zoom
+    "window.zoomLevel": 1,
 }
