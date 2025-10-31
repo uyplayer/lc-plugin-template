@@ -24,7 +24,7 @@
         "--pch-storage=memory",
         "--all-scopes-completion",
         "--completion-style=detailed",
-        "--header-insertion=smart",
+        "--header-insertion=iwyu",
         "--clang-tidy",
         "--fallback-style=llvm"
     ],
