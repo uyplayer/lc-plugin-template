@@ -4,6 +4,7 @@
 #include <vector>
 
 void select_sort(std::vector<int> &array);
+void select_sort_stable(std::vector<int> &array);
 
 int main()
 {
@@ -11,6 +12,17 @@ int main()
 
     std::vector<int> array{1, 4, 8, 9, 3, 4, 7, 2, 4, 8, 5, 63, 9, 31, 455, 36, 48, 2135, 6,
                            3, 4, 8, 19, 6, 3, 58, 4, 1, 4, 64, 64, 64, 651, 31, 98, 98, 3031, 3};
+
+    std::cout << "原始数组 \n";
+    for (std::size_t i = 0; i < array.size(); ++i)
+    {
+        std::cout << array[i];
+        if (i + 1 < array.size())
+        {
+            std::cout << ", ";
+        }
+    }
+
     select_sort(array);
 
     std::cout << "快速排序后数组 \n";
@@ -34,15 +46,7 @@ int main()
  */
 void select_sort(std::vector<int> &array)
 {
-    std::cout << "原始数组 \n";
-    for (std::size_t i = 0; i < array.size(); ++i)
-    {
-        std::cout << array[i];
-        if (i + 1 < array.size())
-        {
-            std::cout << ", ";
-        }
-    }
+
     std::cout << '\n';
 
     std::size_t array_size = array.size();
@@ -66,4 +70,15 @@ void select_sort(std::vector<int> &array)
         array[min_num_index] = tmp;
         current_index++;
     }
+}
+
+/**
+ * @brief 选择排序稳定版本
+ * 基本原理是每一轮找到最小元素后对右侧进行旋转，就是就会
+ * [ X(i), X(i+1), ..., X(minIdx-1), minVal ] 变为 [ minVal, X(i), X(i+1), ..., X(minIdx-1) ]
+ * @param array 要排序的数组
+ *
+ */
+void select_sort_stable(std::vector<int> &array)
+{
 }
