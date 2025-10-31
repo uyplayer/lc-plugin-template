@@ -1,4 +1,34 @@
 {
+    // CMake 配置
+    "cmake.buildDirectory": "${workspaceFolder}/build/Debug",
+    "cmake.buildArgs": [
+        "--parallel",
+        "--"
+    ],
+    "cmake.generator": "Ninja",
+    "cmake.exportCompileCommands": true,
+    "cmake.configureOnOpen": true,
+    "cmake.autoRestartBuild": true,
+    "cmake.configureArgs": [
+        "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
+    ],
+    // C/C++ IntelliSense 设置（禁用 VSCode 内置引擎，使用 clangd）
+    "C_Cpp.intelliSenseEngine": "Disabled",
+    "C_Cpp.autocomplete": "Disabled",
+    "C_Cpp.errorSquiggles": "Disabled",
+    // clangd 配置
+    "clangd.path": "/usr/bin/clangd",
+    "clangd.arguments": [
+        "--compile-commands-dir=${workspaceFolder}/build/Debug",
+        "--background-index",
+        "--pch-storage=memory",
+        "--all-scopes-completion",
+        "--completion-style=detailed",
+        "--header-insertion=smart",
+        "--clang-tidy",
+        "--fallback-style=llvm"
+    ],
+    "clangd.headerInsertion": "iwyu",
     // 文件类型关联
     "files.associations": {
         "*.py": "python",
@@ -21,17 +51,110 @@
     "editor.formatOnSave": true,
     "editor.wordWrap": "on",
     "editor.fontFamily": "Consolas, 'Courier New', monospace",
-    "editor.ligatures": true,
+    "editor.fontLigatures": true,
     "editor.fontSize": 17,
     // 终端设置
     "terminal.integrated.fontFamily": "Consolas, 'Courier New', monospace",
     "terminal.integrated.fontSize": 17,
     // Zoom
     "window.zoomLevel": 1,
-    // cmake 
-    "cmake.sourceDirectory": "/home/uyplayer/projects/lc-plugin-template/cpp-src",
-    "cmake.buildDirectory": "${workspaceFolder}/build",
+    // Python 配置
     "python-envs.defaultEnvManager": "ms-python.python:conda",
     "python-envs.defaultPackageManager": "ms-python.python:conda",
     "python-envs.pythonProjects": [],
+    // 代码文档生成插件
+    "docwriter.style": "Doxygen",
+    // Doxdocgen 配置
+    "doxdocgen.file.fileTemplate": "@file {name}",
+    "doxdocgen.file.versionTag": "@version 0.1",
+    "doxdocgen.generic.authorName": "uyplayer",
+    "doxdocgen.generic.authorEmail": "uyplayer@outlook.com",
+    "doxdocgen.generic.authorTag": "@author {author} ({email})",
+    "doxdocgen.generic.briefTemplate": "@brief {text}",
+    "doxdocgen.generic.dateFormat": "YYYY-MM-DD",
+    "doxdocgen.generic.dateTemplate": "@date {date}",
+    "doxdocgen.generic.boolReturnsTrueFalse": true,
+    "doxdocgen.c.commentPrefix": " * ",
+    "doxdocgen.c.factoryMethodText": "Create a {name} object",
+    "doxdocgen.c.firstLine": "/**",
+    "doxdocgen.c.getterText": "Get the {name} object",
+    "doxdocgen.c.lastLine": " */",
+    "doxdocgen.c.setterText": "Set the {name} object",
+    "doxdocgen.c.triggerSequence": "/**",
+    "doxdocgen.cpp.ctorText": "Construct a new {name} object",
+    "doxdocgen.cpp.dtorText": "Destroy the {name} object",
+    "doxdocgen.cpp.tparamTemplate": "@tparam {param} ",
+    "doxdocgen.file.copyrightTag": [
+        "@copyright Copyright (c) {year}"
+    ],
+    "doxdocgen.file.customTag": [],
+    "doxdocgen.file.fileOrder": [
+        "file",
+        "author",
+        "brief",
+        "version",
+        "date",
+        "empty",
+        "copyright",
+        "empty",
+        "custom"
+    ],
+    "doxdocgen.generic.generateSmartText": true,
+    "doxdocgen.generic.includeTypeAtReturn": true,
+    "doxdocgen.generic.linesToGet": 20,
+    "doxdocgen.generic.order": [
+        "brief",
+        "empty",
+        "tparam",
+        "param",
+        "return",
+        "custom"
+    ],
+    "doxdocgen.generic.customTags": [],
+    "doxdocgen.generic.paramTemplate": "@param {param} ",
+    "doxdocgen.generic.returnTemplate": "@return {type} ",
+    "doxdocgen.generic.splitCasingSmartText": true,
+    "doxdocgen.generic.filteredKeywords": [],
+    "doxdocgen.generic.useGitUserName": false,
+    "doxdocgen.generic.useGitUserEmail": false,
+    "doxdocgen.generic.commandSuggestion": true,
+    "doxdocgen.generic.commandSuggestionAddPrefix": false,
+    // 针对 C++ 的提示增强
+    "[cpp]": {
+        "editor.wordBasedSuggestions": "allDocuments"
+    },
+    "[c]": {
+        "editor.wordBasedSuggestions": "allDocuments"
+    },
+    // 头部注释
+    "fileheader.configObj": {
+        "autoAdd": false,
+        "createHeader": false,
+        "createFooter": false
+    },
+    "fileheader.customMade": {
+        "Author": "uyplayer",
+        "Email": "uyplayer@outlook.com",
+        "Date": "Do not edit",
+        "LastEditTime": "Do not edit",
+        "LastEditors": "uyplayer",
+        "Description": "",
+        "FilePath": "Do not edit",
+        "custom_string_obkoro1": "@copyright Copyright (c) ${now_year} by uyplayer"
+    },
+    "todo-tree.tree.scanMode": "workspace only",
+    "todo-tree.highlights.customHighlight": {
+        "TODO": {
+            "icon": "none",
+            "type": "text",
+            "foreground": "red",
+            "background": ""
+        },
+        "FIXME": {
+            "icon": "alert",
+            "foreground": "red",
+            "background": ""
+        }
+    },
+    "files.eol": "\n"
 }
