@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <iostream>
+#include <span>
 
 int main()
 {

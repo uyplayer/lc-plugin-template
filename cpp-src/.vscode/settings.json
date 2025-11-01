@@ -78,7 +78,9 @@
         "numbers": "cpp",
         "ostream": "cpp",
         "streambuf": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "cinttypes": "cpp",
+        "span": "cpp"
     },
     // 编辑器设置
     "editor.quickSuggestions": {
