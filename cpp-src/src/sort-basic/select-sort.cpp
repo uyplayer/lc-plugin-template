@@ -23,9 +23,11 @@ int main()
         }
     }
 
-    select_sort(array);
+    // select_sort(array);
+    select_sort_stable(array);
 
-    std::cout << "快速排序后数组 \n";
+    std::cout
+        << "\n快速排序后数组 \n";
     for (std::size_t i = 0; i < array.size(); ++i)
     {
         std::cout << array[i];
@@ -81,4 +83,29 @@ void select_sort(std::vector<int> &array)
  */
 void select_sort_stable(std::vector<int> &array)
 {
+
+    auto array_size = array.size();
+    auto current_index = 0;
+    while (current_index < array_size)
+    {
+
+        auto min_index = current_index;
+        for (auto i = current_index + 1; i < array_size; i++)
+        {
+
+            if (array[i] < array[min_index])
+            {
+                min_index = i;
+            }
+        }
+        // 移动元素位置（旋转）
+        int min_val = array[min_index];
+        for (size_t i = min_index; i > current_index; --i)
+        {
+            array[i] = array[i - 1];
+        }
+        array[current_index] = min_val;
+
+        ++current_index;
+    }
 }
