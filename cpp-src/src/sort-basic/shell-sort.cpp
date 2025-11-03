@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 
+void shell_sort(std::vector<int> &array);
 void print(const std::vector<int> &array, const char *tag);
 
 int main()
@@ -16,6 +17,12 @@ int main()
     print(array, "原始数组");
 
     return 0;
+}
+
+void shell_sort(std::vector<int> &array)
+{
+
+    auto array_size = array.size();
 }
 
 void print(const std::vector<int> &array, const char *tag)
