@@ -30,12 +30,12 @@ void shell_sort(std::vector<int> &a)
     // 子串  ： 路径1：索引 0, 2, 4 → [10, 6, 2]  ；路径2：索引 1, 3, 5 → [8, 4, 1]
     for (size_t gap = a.size() / generator; gap > 0; gap /= generator)
     {
-        // gap ：  2， 1
+        // 遍历一个gap 的整个路径
         for (size_t i = gap; i < a.size(); ++i)
         {
             int x = a[i];
             size_t j = i;
-            // 移动位置 就是处理gap
+            // 移动位置 ，就是当前的子路径路面的index gap 的元素放在子路径里合适位置就行
             while (j >= gap && a[j - gap] > x)
             {
                 a[j] = a[j - gap];
