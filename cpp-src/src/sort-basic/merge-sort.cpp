@@ -41,7 +41,7 @@ void merge_sort(std::vector<int> &array, int first_index, int last_index)
 
 void merge(std::vector<int> &array, int first_index, int middle_index, int last_index)
 {
-    // 左右的元素个数（闭区间约定）
+
     int left_num = middle_index - first_index + 1; // [first_index..middle_index]
     int right_num = last_index - middle_index;     // [middle_index+1..last_index]
 
