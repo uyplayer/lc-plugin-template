@@ -80,7 +80,10 @@
         "streambuf": "cpp",
         "typeinfo": "cpp",
         "cinttypes": "cpp",
-        "span": "cpp"
+        "span": "cpp",
+        "cstring": "cpp",
+        "ctime": "cpp",
+        "map": "cpp"
     },
     // 编辑器设置
     "editor.quickSuggestions": {
