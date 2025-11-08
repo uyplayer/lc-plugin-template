@@ -124,7 +124,8 @@
         "syncstream": "cpp",
         "thread": "cpp",
         "typeindex": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "queue": "cpp"
     },
     // 编辑器设置
     "editor.quickSuggestions": {
