@@ -30,29 +30,30 @@ void radix_sort(std::vector<int> &nums)
     std::vector<int> out(nums.size());
     const int RADIX = 10;
 
-    // 从个位到最高位，重复“计数 -> 前缀和 -> 分配”
+    // 从最低位开始按位循环排序：`exp` 依次取 1、RADIX、RADIX²…，直到 `exp` 超过最大值 `mx` 的位数为止
     for (int exp = 1; mx / exp > 0; exp *= RADIX)
     {
         int cnt[RADIX] = {0};
 
-        // 1) 计数：这一位是 0..9 各有多少个
+        //   统计当前位数的出现次数
         for (int x : nums)
         {
-            int d = (x / exp) % RADIX; // 0..RADIX-1
-            ++cnt[d];                  // 等价于 cnt[d] += 1;
+            int d = (x / exp) % RADIX;
+            ++cnt[d];
         }
 
-        // 2) 前缀和：把“个数”变成“在 out 里的起始写入位置”
+        // 做前缀和
         for (int i = 1; i < RADIX; ++i)
             cnt[i] += cnt[i - 1];
-        // 也可写成从前累加；下面分配时用 --cnt[d] 反向填充更直观
-
-        // 3) 稳定分配：倒序遍历，按当前位把元素放到 out 的正确位置
+        // 从最后一个元素开始，倒着遍历 nums（保证“稳定”——相同数字时，后出现的先放到更右边的位置
         for (int i = (int)nums.size() - 1; i >= 0; --i)
         {
+            // 把当前元素 nums[i] 在“以 RADIX 为基数、位权为 exp”这一位上的数字取出来——也就是取它的当前位数码（十进制时 exp=1/10/100 对应个位/十位/百位）
             int d = (nums[i] / exp) % RADIX;
-            out[--cnt[d]] = nums[i]; // 先 -- 再写，保证稳定
+            // 把当前元素放到它在输出数组中应该去的正确位置上（根据当前位的数字 d 决定）
+            out[--cnt[d]] = nums[i];
         }
-        nums.swap(out); // 本轮结果成为下一轮的输入
+        // 把本轮排好序的结果 out 和原数组 nums 交换，让 nums 立刻变成本轮结果，省去拷贝，准备下一轮
+        nums.swap(out);
     }
 }
