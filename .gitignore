@@ -3,7 +3,7 @@
  
 .idea
 # .lcpr_data
-*.md
+ 
 !README.md
 build
 .cache
