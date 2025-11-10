@@ -22,6 +22,11 @@ int main()
     return 0;
 }
 
+/**
+ * @brief  反向冒泡排序，左边逐渐成有序区、右边是未排序区
+ *
+ * @param array
+ */
 void bubble_sort(std::vector<int> &array)
 {
 
@@ -41,6 +46,33 @@ void bubble_sort(std::vector<int> &array)
             }
         }
         current_index++;
+    }
+}
+
+/**
+ * @brief 正向冒牌排序
+ *
+ * @param array
+ */
+void bubble_sort1(std::vector<int> &array)
+{
+    auto array_size = array.size();
+    if (array_size < 2)
+        return;
+
+    auto current_index = array_size - 1;
+    while (current_index > 0)
+    {
+        for (int i = 0; i < current_index; i++)
+        {
+            if (array[i] > array[i + 1])
+            {
+                auto tmp = array[i];
+                array[i] = array[i + 1];
+                array[i + 1] = tmp;
+            }
+        }
+        current_index--;
     }
 }
 

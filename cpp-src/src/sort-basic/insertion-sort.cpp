@@ -30,7 +30,7 @@ void insertion_sort(std::vector<int> &array)
     while (current_index < array_size)
     {
 
-        for (auto i = current_index; current_index > 0; i--)
+        for (auto i = current_index; i > 0; i--)
         {
             if (array[i] < array[i - 1])
             {

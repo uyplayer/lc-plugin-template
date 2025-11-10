@@ -43,7 +43,7 @@ int main()
 
 /**
  * @brief 快速排序算法
- *
+ * 选择排序原理：右边没排序的区域里找最小值，替换当前位置，相当于左边的排序号的区域，右边是没排序的区域
  * @param array 要排序的数组
  */
 void select_sort(std::vector<int> &array)
@@ -108,4 +108,22 @@ void select_sort_stable(std::vector<int> &array)
 
         ++current_index;
     }
+}
+
+/**
+ * @brief 旋转数组
+ *
+ * @param array
+ * @param current_index
+ * @param min_index
+ */
+void translation(std::vector<int> &array, int current_index, int min_index)
+{
+
+    auto min_value = array[min_index];
+    for (auto i = min_index; i > current_index; i--)
+    {
+        array[i] = array[i - 1];
+    }
+    array[current_index] = min_index;
 }
