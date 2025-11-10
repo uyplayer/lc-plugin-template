@@ -49,6 +49,31 @@ void insertion_sort(std::vector<int> &array)
     }
 }
 
+void insertion_sort1(std::vector<int> &array)
+{
+
+    auto array_size = array.size();
+
+    auto current_index = 0;
+    while (current_index < array_size)
+    {
+        for (auto i = current_index; i > 0; i--)
+        {
+            if (array[i] > array[i - 1])
+            {
+                auto tmp = array[i];
+                array[i] = array[i - 1];
+                array[i - 1] = tmp;
+            }
+            else
+            {
+                // 因为 左边已经排序好的区域
+                break;
+            }
+        }
+        current_index++;
+    }
+}
 void print(const std::vector<int> &array, const char *tag)
 {
     if (tag != nullptr && *tag != '\0')
