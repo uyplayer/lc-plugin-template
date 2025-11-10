@@ -27,7 +27,10 @@ void shell_sort(std::vector<int> &a)
     auto generator = 2;
     // a.size() = 6
     // [10, 8, 6, 4, 2, 1]，gap = 2
-    // 子串  ： 路径1：索引 0, 2, 4 → [10, 6, 2]  ；路径2：索引 1, 3, 5 → [8, 4, 1]
+    // 例如 gap=3 时有三条路径：
+    // 路径A：下标 0, 3 → 元素 [10, 4]
+    // 路径B：下标 1, 4 → 元素 [8, 2]
+    // 路径C：下标 2, 5 → 元素 [6, 1]
     for (size_t gap = a.size() / generator; gap > 0; gap /= generator)
     {
         // 遍历一个gap 的整个路径
