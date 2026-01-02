@@ -1,29 +1,32 @@
 /*
- * @lc app=leetcode.cn id=837 lang=c
+ * @lc app=leetcode.cn id=171 lang=cpp
  * @lcpr version=30305
  *
- * [837] 新 21 点
+ * [171] Excel 表列序号
  */
 
 // @lc code=start
-double new21Game(int n, int k, int maxPts) {
-    
-}
+class Solution {
+public:
+    int titleToNumber(string columnTitle) {
+        
+    }
+};
 // @lc code=end
 
 
 
 /*
 // @lcpr case=start
-// 10\n1\n10\n
+// "A"\n
 // @lcpr case=end
 
 // @lcpr case=start
-// 6\n1\n10\n
+// "AB"\n
 // @lcpr case=end
 
 // @lcpr case=start
-// 21\n17\n10\n
+// "ZY"\n
 // @lcpr case=end
 
  */
