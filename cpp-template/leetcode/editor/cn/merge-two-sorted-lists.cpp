@@ -11,24 +11,31 @@
 #include <string>
 #include <vector>
 
-
 using namespace std;
 
 // @lc code=start
-class Solution {
+class Solution
+{
 public:
-  ListNode *mergeTwoLists(ListNode *l1, ListNode *l2) {
-    // 虚拟头结点
-    ListNode dummy(-1), *p = &dummy;
-    ListNode *p1 = l1, *p2 = l2;
+  ListNode *mergeTwoLists(ListNode *l1, ListNode *l2)
+  {
 
-    while (p1 != nullptr && p2 != nullptr) {
+    ListNode dummy(-1);      // 虚拟头结点
+    ListNode *p = dummy(-1); // 保存结果   奇怪为什么需要dummy ？  因为指针p 不断前进，最后返回不一定链表头节点链表反而链表末尾；
+    ListNode *p1 = l1;
+    ListNode *p2 = l2;
+
+    while (p1 != nullptr && p2 != nullptr)
+    {
       // 比较 p1 和 p2 两个指针
       // 将值较小的的节点接到 p 指针
-      if (p1->val > p2->val) {
+      if (p1->val > p2->val)
+      {
         p->next = p2;
         p2 = p2->next;
-      } else {
+      }
+      else
+      {
         p->next = p1;
         p1 = p1->next;
       }
@@ -36,11 +43,13 @@ public:
       p = p->next;
     }
 
-    if (p1 != nullptr) {
+    if (p1 != nullptr)
+    {
       p->next = p1;
     }
 
-    if (p2 != nullptr) {
+    if (p2 != nullptr)
+    {
       p->next = p2;
     }
 
@@ -49,7 +58,8 @@ public:
 };
 // @lc code=end
 
-int main() {
+int main()
+{
   Solution solution;
   // your test code here
   ListNode *l1 = ListNode::createHead({1, 2, 4});
