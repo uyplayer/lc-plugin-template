@@ -31,7 +31,7 @@
         }
     },
     "labuladong-leetcode.workspaceFolder": "/home/uyplayer/projects/lc-plugin-template/cpp-template",
-    "cmake.sourceDirectory": "/Users/uyplayer/projects/lc-plugin-template/cpp-template",
+    "cmake.sourceDirectory": "/home/uyplayer/projects/lc-plugin-template/cpp-template",
     // 文件类型关联
     "files.associations": {
         "*.py": "python",
