@@ -30,13 +30,8 @@
             "filename": "${id}.${kebab-case-name}.${ext}"
         }
     },
-<<<<<<< HEAD
-    "labuladong-leetcode.workspaceFolder": "/home/uyplayer/projects/lc-plugin-template/cpp-template",
-    "cmake.sourceDirectory": "/home/uyplayer/projects/lc-plugin-template/cpp-template",
-=======
-    "labuladong-leetcode.workspaceFolder": "/Users/uyplayer/projects/lc-plugin-template/cpp-template",
-    "cmake.sourceDirectory": "/Users/uyplayer/projects/lc-plugin-template/cpp-template",
->>>>>>> c1ec7bcefad5f334e3b6e2768690576eb802e1a4
+    "labuladong-leetcode.workspaceFolder": "${workspaceFolder}/cpp-template",
+    "cmake.sourceDirectory": "${workspaceFolder}/cpp-template",
     // 文件类型关联
     "files.associations": {
         "*.py": "python",
